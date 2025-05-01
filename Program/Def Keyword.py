@@ -175,11 +175,3 @@ print(age)
 # 30
 
 """"Returning List"""
-
-def fun(n):
-    return [n**2, n**3]
-
-res = fun(3)
-print(res)
-# -> [9, 27]
-
