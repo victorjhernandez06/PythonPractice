@@ -26,6 +26,6 @@ class UserManager:
            user= User()
         print(f"Your user has been created successfully, your permissions are: {user.permissions}")
 
-UserManager().create_user(False)
+UserManager().create_user(True)
 
 
