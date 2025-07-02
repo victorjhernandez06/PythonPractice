@@ -41,4 +41,5 @@ print("\"Yes,\" they said.")
 print('"Ins\'t," "they said')
 
 s = 'First line.\nSecond Line.' # \n means newline
-print (s)
+print (s) # with print(), special characters are interpreted, so \n produces new line
+
