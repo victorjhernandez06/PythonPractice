@@ -43,3 +43,17 @@ print('"Ins\'t," "they said')
 s = 'First line.\nSecond Line.' # \n means newline
 print (s) # with print(), special characters are interpreted, so \n produces new line
 
+
+print(r'c:\some\name') # note the r before the quote
+
+
+print("""\
+... Usage: thingy [OPTIONS]
+... h     Display this usage message
+... H hostname  Hostname to conect to
+""")
+
+print( 3* 'vic' + 'tor')
+print('Py''thon')
+
+
