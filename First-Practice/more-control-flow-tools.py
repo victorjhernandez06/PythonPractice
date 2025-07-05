@@ -89,6 +89,8 @@ for i in range(len(a)):
 
 print(range(10))
 #--> range(0, 10)
+print(list(range(10)))
+#--> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] Crea una lista desde el 0 hasta el 9
 
 # in many way the object returned by range() behaves as if it a list, but in fact it isn't. It is an object which returns the successive items of the desired when you iterate over it, but it doesn't really make the list, thus saving space
 
@@ -98,7 +100,7 @@ print(sum(range(4)))
 '''BREAK AND CONTINUE STATEMENTS'''
 # The break statement breaks out of the innermost enclosing for or while loop:
 
-for n in range (2, 30):
+for n in range (2, 10):
     for x in range(2,n):
         if n % x == 0:
             print(f"{n} equals {x}*{n//x}")
@@ -131,7 +133,7 @@ print('ELSE CLAUSES ON LOOPS')
 # In either kind of loop, the else clause is not executed if the loop was terminated by a break. Of course, other ways of ending the loop early such as a return or a raised exception, will also skip execution of the else clause.
 # this is exemplified in the folllowing for loop, which searches for prime numbers:
 
-for n in range(2,10):
+for n in range(2,100):
     for x in range(2,n):
         if n % x == 0:
             print(n, 'equals', x, '*', n//x)
@@ -147,4 +149,22 @@ for n in range(2,10):
 # 7 is a prime number
 # 8 equals 2 * 4
 # 9 equals 3 * 3
+
+'''PASS STATEMENTS'''
+# the pass statement does nothing. It can be used when a statement is required syntactically but the program requires no action.
+
+while True:
+    pass #--> Busy-wait for keyboard interrupt (ctrl+C)
+
+# this is commonly used creating minimal classes
+class MyEmptyClass:
+    pass
+
+# Another place pass can be used is as a place-holder for a function or conditional body when you are working on a new code, allowing you to keep thinking at a more abstract level. The pass is silently ignored.
+def initlog(*args):
+    pass
+
+
+"""MACTH STATEMENTS"""
+# A match statement takes an expression and compares its value to successive patterns given as one or more case blocks. THis is superficially similar to a switch statement in C, JavaScript (and many other languages), but it's more similar to pattern matching in languages like Rust or Haskell. Only the first pattern matches gets executed and it can also extract components (sequences elementsor object attributes) from vale into variables.
 
