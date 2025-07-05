@@ -59,21 +59,14 @@ for i in range(5):
 # 3
 # 4
 
-a =  ['Mary','had','a', 'litle','lamb']
+a =  ['Mary','had','a', 'little','lamb']
 for i in range(len(a)):
     print(i, a[i])
 # 0 Mary
 # 1 had
 # 2 a
-# 3 litle
+# 3 little
 # 4 lamb
-
-print(range(10))
-#--> range(0, 10)
-
-
-print(sum(range(4)))
-#--> 0+1+2+3 --> 6
 
 print(list(range(5,10))) # --> [5, 6, 7, 8, 9]
 print(list(range(0,10,3))) #--> [0, 3, 6, 9]
@@ -81,13 +74,58 @@ print(list(range(-10,-100,-30))) #--> [-10, -40, -70]
 
 # To iterate over the indices of a sequence, you can combine range() and len() as follows:
 
-a = ['mary', 'had','a','litle', 'lamb']
+a = ['mary', 'had','a','little', 'lamb']
 for i in range(len(a)):
     print(i, a[i])
 
 # 0 mary
 # 1 had
 # 2 a
-# 3 litle
+# 3 little
 # 4 lamb
+
+# in most such cases, however, it is convenient to use the enumerate() function
+# A strange thing happens if you print a range:
+
+print(range(10))
+#--> range(0, 10)
+
+# in many way the object returned by range() behaves as if it a list, but in fact it isn't. It is an object which returns the successive items of the desired when you iterate over it, but it doesn't really make the list, thus saving space
+
+print(sum(range(4)))
+#--> 0+1+2+3 --> 6
+
+'''BREAK AND CONTINUE STATEMENTS'''
+# The break statement breaks out of the innermost enclosing for or while loop:
+
+for n in range (2, 30):
+    for x in range(2,n):
+        if n % x == 0:
+            print(f"{n} equals {x}*{n//x}")
+            break
+# 4 equals 2*2
+# 6 equals 2*3
+# 8 equals 2*4
+# 9 equals 3*3
+
+# the continue statement continues with the next iteration of the loop:
+for num in range(2, 10):
+    if num % 2 == 0:
+        print(f"Found an even number{num}")
+        continue
+    print(f"Found an odd number{num}")
+# Found an even number2
+# Found an odd number3
+# Found an even number4
+# Found an odd number5
+# Found an even number6
+# Found an odd number7
+# Found an even number8
+# Found an odd number9
+
+'''ELSE CLAUSES ON LOOPS'''
+# in a for or while loop the break statement may be paired with an else clause. If the loop finishes without executing the break, the else clause executes.
+# in a for loop the else clause is execute after the loop finishes its final iteraction, if no break ocurred.
+
+
 
