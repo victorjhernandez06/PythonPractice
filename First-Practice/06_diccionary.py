@@ -111,14 +111,25 @@ print(filtered_data)
 
 
 
+"""Operaciones con diccionarios"""
+my_dict =  dict()
+my_other_dict = {}
+print(type(my_other_dict)) #--><class 'dict'>
+print(type(my_dict)) #--><class 'dict'>
 
+my_other_dict = {'nombre': "brais", "apellido": "moure", "edad":35, 1:"python"}
 
+my_dict = {
+    "name":"Victor",
+    "Last_name":  "Hernandez",
+    "Age": 42,
+    "languages":{"python",'Swift',"Kotlin"}
+}
 
 # A dictionary is a data structure that stores key:Values pairs
 data_dictionary = {'clave' : 'valor'}
 
 data_dictionary_one = {'name': 'Victor Hernandez', 'age':45, 'city': 'Cojedes'}
-
 
 # Acceder a los valores mediante claves
 # Access values via key.
