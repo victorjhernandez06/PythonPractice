@@ -133,7 +133,7 @@ print('ELSE CLAUSES ON LOOPS')
 # In either kind of loop, the else clause is not executed if the loop was terminated by a break. Of course, other ways of ending the loop early such as a return or a raised exception, will also skip execution of the else clause.
 # this is exemplified in the folllowing for loop, which searches for prime numbers:
 
-for n in range(2,100):
+for n in range(2,10):
     for x in range(2,n):
         if n % x == 0:
             print(n, 'equals', x, '*', n//x)
@@ -151,7 +151,7 @@ for n in range(2,100):
 # 9 equals 3 * 3
 
 '''PASS STATEMENTS'''
-# the pass statement does nothing. It can be used when a statement is required syntactically but the program requires no action.
+# the pass statement does nothing. It can be used when a statement is required syntactically, but the program requires no action.
 
 # while True:
 #     pass #--> Busy-wait for keyboard interrupt (ctrl+C)
@@ -166,7 +166,44 @@ for n in range(2,100):
 
 
 """MACTH STATEMENTS"""
-# A match statement takes an expression and compares its value to successive patterns given as one or more case blocks. THis is superficially similar to a switch statement in C, JavaScript (and many other languages), but it's more similar to pattern matching in languages like Rust or Haskell. Only the first pattern matches gets executed and it can also extract components (sequences elementsor object attributes) from vale into variables.
+# A match statement takes an expression and compares its value to successive patterns given as one or more case blocks. THis is superficially similar to a switch statement in C, JavaScript (and many other languages), but it's more similar to pattern matching in languages like Rust or Haskell. Only the first pattern matches gets executed and it can also extract components (sequences elementor object attributes) from vale into variables.
+
+def http_error(status):
+    match status:
+        case 400:
+            return "Bad request"
+        case 404:
+            return "Not Found"
+        case 418:
+            return "I'm a teapot"
+        case _:
+            return "Something's wrong with the internet"
+
+# Note: The last block: the "variable name" _ acts as wildcard and never fails to match. if no case matches, none of the branches is executed.
+# You can combine several literals in a single pattern using | ("or")
+
+def https_error (status):
+    match status:
+        case 404 | 403 | 404:
+            return "Not Allowed"
+
+# Patterns can look like unpacking assignments, and can be used to bind variables:
+# point is an (x, y) tuple
+point = (0, 5)
+
+match point:
+    case (0, 0):
+        print("Origin")
+    case (0, y):
+        print(f"Y={y}")
+    case (x, 0):
+        print(f"X={x}")
+    case (x, y):
+        print(f"X={x}, Y={y}")
+    case _:
+        raise ValueError("Not a point")
+
+
 
 # status = 400
 # def http_error(status):
