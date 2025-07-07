@@ -266,3 +266,5 @@ ejes = Point(0,0)
 print(ejes) #--> Point(0, 0)
 Point.where_is(ejes) #--> Origin
 
+#
+
