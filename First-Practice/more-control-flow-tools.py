@@ -153,18 +153,79 @@ for n in range(2,100):
 '''PASS STATEMENTS'''
 # the pass statement does nothing. It can be used when a statement is required syntactically but the program requires no action.
 
-while True:
-    pass #--> Busy-wait for keyboard interrupt (ctrl+C)
-
-# this is commonly used creating minimal classes
-class MyEmptyClass:
-    pass
-
-# Another place pass can be used is as a place-holder for a function or conditional body when you are working on a new code, allowing you to keep thinking at a more abstract level. The pass is silently ignored.
-def initlog(*args):
-    pass
+# while True:
+#     pass #--> Busy-wait for keyboard interrupt (ctrl+C)
+#
+# # this is commonly used creating minimal classes
+# class MyEmptyClass:
+#     pass
+#
+# # Another place pass can be used is as a place-holder for a function or conditional body when you are working on a new code, allowing you to keep thinking at a more abstract level. The pass is silently ignored.
+# def initlog(*args):
+#     pass
 
 
 """MACTH STATEMENTS"""
 # A match statement takes an expression and compares its value to successive patterns given as one or more case blocks. THis is superficially similar to a switch statement in C, JavaScript (and many other languages), but it's more similar to pattern matching in languages like Rust or Haskell. Only the first pattern matches gets executed and it can also extract components (sequences elementsor object attributes) from vale into variables.
+
+# status = 400
+# def http_error(status):
+#     match status:
+#         case 400:
+#             return "Bad request"
+#         case 404:
+#             return "Not found"
+#         case 418:
+#             return "I'm a teapot"
+#         case _:
+#             return "Something's wrong with the internet"
+
+# Note the last block: the "variable name" _ acts as a wilcard and never fails to match. If no case matches, none of the branches is executed.
+
+# case 401 | 403 | 404:
+#     return "Not allowed"
+
+# patterns can look like unpacking assignments, and can be used to bind variable
+
+# point is an (x, y) tuple
+# match point:
+#     case(0,0):
+#         print('Origin')
+#     case(0, y):
+#         print(f"Y={y}")
+#     case(x, 0):
+#         print(f"X={x}")
+#     case(x, y):
+#         print(f"X={x}, Y={y}")
+#     case _:
+#         raise ValueError("Not a point")
+
+# Study that one carefully! the first pattern has two literals, and can be thought of as an extension of the literal pattern shown above. But the next two pattern combine a literal and a variable, and the variable binds a value from the subject(point). The fourth pattern captures two values, which makes it conceptually similar to the unpacking assignment (x,y) = point.
+
+# If you are using classes to structure your data you can use the class name followed by an argument list resembling a constructor, but with the ability to capture attributes into variables:
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def where_is(point):
+        match point:
+            case Point(x=0, y=0):
+                print("Origin")
+            case Point(x=0, y=y):
+                print(f"Y={y}")
+            case Point(x=x, y=0):
+                print(f"X={x}")
+            case Point():
+                print("somewhere else")
+            case _:
+                print("Not a point")
+
+    def __str__(self):
+        return f"Point({self.x}, {self.y})"
+
+ejes = Point(0,0)
+print(ejes) #--> Point(0, 0)
+Point.where_is(ejes) #--> Origin
 
