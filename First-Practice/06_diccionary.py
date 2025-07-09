@@ -126,8 +126,13 @@ my_dict = {
     "languages":{"python",'Swift',"Kotlin"}
 }
 
+my_dict['country'] = 'Venezuela'
+print(my_dict) #--> {'name': 'Victor', 'Last_name': 'Hernandez', 'Age': 42, 'languages': {'Kotlin', 'Swift', 'python'}, 'country': 'Venezuela'}
+print(my_dict['country']) #--> Venezuela
+
+
 # A dictionary is a data structure that stores key:Values pairs
-data_dictionary = {'clave' : 'valor'}
+# data_dictionary = {'clave' : 'valor'}
 
 data_dictionary_one = {'name': 'Victor Hernandez', 'age':45, 'city': 'Cojedes'}
 
