@@ -139,6 +139,14 @@ data_dictionary_one = {'name': 'Victor Hernandez', 'age':45, 'city': 'Cojedes'}
 # Acceder a los valores mediante claves
 # Access values via key.
 print(data_dictionary_one['name']) # --> Victor Hernandez
+print(my_other_dict)
 
 #Agregar Elementos
 # Add Elements
+
+print('victor' in my_other_dict) #--> False aqui comprueba si la clave 'victor' existe en el diccionario.
+
+print(my_dict.items()) # Retorna todos los valores, ordenados, clave:valor
+print(my_dict.keys()) # Retorna todas las claves o keys
+print(my_dict.values()) # Retorna todos los valores del diccionario. 
+
