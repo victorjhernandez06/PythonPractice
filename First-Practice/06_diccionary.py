@@ -150,3 +150,41 @@ print(my_dict.items()) # Retorna todos los valores, ordenados, clave:valor
 print(my_dict.keys()) # Retorna todas las claves o keys
 print(my_dict.values()) # Retorna todos los valores del diccionario. 
 
+my_new_dict = my_other_dict.fromkeys(("name",1,"address","zip_code"))
+print(my_new_dict)
+my_new_dict['name']="Mathias"
+my_new_dict[1]= "58424"
+my_new_dict['address']="Las vegas"
+my_new_dict['zip_code']=2204
+print(my_new_dict)
+
+
+# Add many keys:valor one by key
+
+my_dictionary = {'a':1, 'b':2}
+my_dictionary['c']=3
+my_dictionary['d']=4
+
+print(my_dictionary)
+
+# Add one or more parameters with update() 
+
+my_dictionary.update({"e":5, "f":6, "g":7})
+print(my_dictionary)
+
+#  Si quieres que una clave tenga múltiples valores → usa una lista
+my_dictionary2 = {"fruit":["apples", "pears"]}
+
+# add more items to the list.
+my_dictionary2["fruit"].append("orange")
+my_dictionary2["fruit"].extend(["banana","kiwi",'grapes'])
+print(my_dictionary2)
+
+
+# Si quieres que la clave tenga multiples valores, -> defaultdict(optional)
+from collections import defaultdict
+my_dictionary2 = defaultdict(list)
+my_dictionary2["colors"].append('red')
+my_dictionary2["colors"].append("green")
+
+print(my_dictionary2)
