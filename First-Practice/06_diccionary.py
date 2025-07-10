@@ -238,3 +238,52 @@ car2 = {
 x = car.get("Price",15000)
 print(x)
 
+my_list1 = ['name', 1, 'piso']
+my_new_dict1 = dict.fromkeys(my_list1)
+print(my_new_dict1) # --> {'name': None, 1: None, 'piso': None}
+
+my_new_dict1 = dict.fromkeys(("nombre", 1 , "piso"))
+print(my_new_dict1) # --> {'nombre': None, 1: None, 'piso': None}
+
+my_new_dict1 = dict.fromkeys(my_dict)
+print(my_new_dict1) #--> {'name': None, 'Last_name': None, 'Age': None, 'languages': None, 'country': None}
+
+my_new_dict1 = dict.fromkeys(my_dict, "victor")
+print(my_new_dict1) #-> {'name': 'victor', 'Last_name': 'victor', 'Age': 'victor', 'languages': 'victor', 'country': 'victor'}
+
+print(list(my_new_dict1)) #--> ['name', 'Last_name', 'Age', 'languages', 'country']
+print(tuple(my_new_dict1)) #--> ('name', 'Last_name', 'Age', 'languages', 'country')
+print(set(my_new_dict1)) #--> {'Age', 'Last_name', 'languages', 'country', 'name'}
+
+
+"""PYTHON DICTIONARY VALUES() METHOD"""
+#Ahora si hacemos un punto .values(), nos retorna la variable.
+# Returns a list of all the values in the dictionary
+car= {
+    "brand" : "Toyota",
+    "model": "Camry",
+    "year":2020
+}
+x =  car.values()
+print(x) #--> dict_values(['Toyota', 'Camry', 2020])
+
+# example 2
+car = {
+    "brand":"BMW",
+    "model": "Mercedes",
+    "year": 2024
+}
+x = car.values()
+car['year']= 2018
+
+print(x) #--> dict_values(['BMW', 'Mercedes', 2018])
+
+print('--------------')
+
+my_values  = my_new_dict1.values()
+print (type(my_values)) #--> <class 'dict_values'>
+
+
+print(list(my_new_dict1)) 
+print(tuple(my_new_dict1)) 
+print(set(my_new_dict1))
