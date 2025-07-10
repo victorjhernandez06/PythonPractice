@@ -129,7 +129,8 @@ my_dict = {
 my_dict['country'] = 'Venezuela'
 print(my_dict) #--> {'name': 'Victor', 'Last_name': 'Hernandez', 'Age': 42, 'languages': {'Kotlin', 'Swift', 'python'}, 'country': 'Venezuela'}
 print(my_dict['country']) #--> Venezuela
-
+print("name" in my_dict) # --> True
+print("nombre" in my_dict) # -->False
 
 # A dictionary is a data structure that stores key:Values pairs
 # data_dictionary = {'clave' : 'valor'}
@@ -188,3 +189,52 @@ my_dictionary2["colors"].append('red')
 my_dictionary2["colors"].append("green")
 
 print(my_dictionary2)
+
+
+'''PYTHON DICTIONARY METHODS'''
+
+# Create a dictionary with 3 keys, all with the value 0
+x = ('key1', 'key2','key3')
+y = 0
+
+thisdict = dict.fromkeys(x, y)
+print(thisdict) #--> {'key1': 0, 'key2': 0, 'key3': 0}
+
+""" The fromkeys() method returns a dictionary with the specified keys and the specified value.
+#  Syntax
+#  dict.fromkeys(keys, value)
+"""
+# Keys Required. An iterable specifying the keys of the new dictionary
+# Value Optional. The value for all key. Defaults value is none. 
+
+x = ('key1', 'key2', 'key3')
+
+thisdict_1 = dict.fromkeys(x)
+print(thisdict_1) #--> {'key1': None, 'key2': None, 'key3': None}
+
+"""GET() METHODS"""
+# The get() method returns the value of the item with specified key.
+#  dictionary.get(keyname, value)
+
+car = {
+    "brand":"Ford",
+    "model":"Munstang",
+    "year" : 1964
+}
+
+x = car.get("model")
+print(x) #--> Mustang
+x = car["model"]
+print(x) #--> Mustang
+print(car["model"]) #--> Mustang
+
+# Try to return the value of an item that do not exist:
+car2 = {
+    "brand": "ford",
+    "model":"350",
+    "year":1964
+}
+
+x = car.get("Price",15000)
+print(x)
+
