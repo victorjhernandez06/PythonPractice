@@ -152,7 +152,7 @@ guide_dog=GuideDog("Max")
 guide_dog.display_name()
 guide_dog.guide()
 
-retriever = s GoldenRetriever("Charlie")
+retriever = GoldenRetriever("Charlie")
 retriever.display_name()
 retriever.greet()
 retriever.sound()
