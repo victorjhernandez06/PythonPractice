@@ -4,5 +4,6 @@
 
 my_conditions =  True
 
-if my_conditions:
+if my_conditions == True:
     print("la condicion se ejecuta")
+print("la condicion no se ejecuta")
