@@ -10,4 +10,7 @@ if my_conditions == True:
 print("la condicion no se ejecuta")
 
 # Es la tercera vez que lo hagosource venv/bin/activate
+my_conditions = 5*2
 
+if my_conditions == 20:
+    print(f"The value in my conditions is{my_conditions}")
