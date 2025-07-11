@@ -9,4 +9,5 @@ if my_conditions == True:
 
 print("la condicion no se ejecuta")
 
-# Es la tercera vez que lo hago
+# Es la tercera vez que lo hagosource venv/bin/activate
+
