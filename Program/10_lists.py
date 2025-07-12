@@ -94,15 +94,43 @@ thisList=["apple", "banana", "cherry", "orange", "kiwi","mango"]
 thisList[1:3] = ["blackcurrant", "watermelon"]
 print(thisList) #--> ['apple', 'blackcurrant', 'watermelon', 'orange', 'kiwi', 'mango']
 
+#if you insert more items than you replace , the new items will be insert where you specified, and the remaining items will move accordingly.
 thisList = ["apple","banana","cherry"]
 thisList[1:2] = ["blackcurrant","watermelon"]
 print(thisList) # --> ['apple', 'blackcurrant', 'watermelon', 'cherry']
 
+# Note: The length of the list will change when the number of items inserted does not match the number of items replaced.
+
+# if you insert less items than you replace, the new items will be inserted where you specified, and the remaining items move accordingly
+
 thisList = ["apple","banana","cherry"]
-thisList[1:3] = ["watermelon"]
+thisList[1:3] = ["watermelon"] #aqui elegimos insertar watermelon en los espacios del 1 al 2, por lo que la lista queda recortada  y solo imprime: ['apple', 'watermelon']
+print(thisList) #--> ['apple', 'watermelon']
+
+"""INSERT ITEMS"""
+
+# to inser a new list item, without replacing any of the existing values, we can use teh insert()method inserts an tiem at the specified index.
+
+
+"""PYTHON ADD LIST ITMES"""
+
+"""APPEND ITEMS"""
+# to add a item to the end the list, use the append() method.
+
+thisList = ["apple","banana","cherry"]
+theList.append("orange")
+print(theList) #--> ['apple', 'banana', 'cherry', 'orange']
+
+"""INSERT ITEMS"""
+# To insert a list items at a specified index, use the insert() method. this inserts an items at the specified index.
+
+theList = ["apple","banana","cherry"]
+theList.insert(0, "orange")
+print(theList) #--> ['orange', 'apple', 'banana', 'cherry']
+
+"""EXTEND LIST"""
+# to append elements from another list to the current list, use the extend() method.
+thisList = ["apple","banana","cherry"]
+tropical = ["mango","pineaple", "papaya"]
+thisList.extend(tropical)
 print(thisList)
-
-
-
-
-
