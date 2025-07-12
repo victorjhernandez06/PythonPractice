@@ -133,4 +133,111 @@ print(theList) #--> ['orange', 'apple', 'banana', 'cherry']
 thisList = ["apple","banana","cherry"]
 tropical = ["mango","pineaple", "papaya"]
 thisList.extend(tropical)
-print(thisList)
+print(thisList) #--> ['apple', 'banana', 'cherry', 'mango', 'pineaple', 'papaya']
+
+"""ADD ANY ITERABLE"""  
+# The extend() method does not have to apppend lists, you can add any iterable object (tuples, sets, dictionaries, etc).
+
+# Add elements of a tuple to a list.
+thisList = ["apple","banana","cherry"]
+thistuple = ["kiwi","orange"]
+thisList.extend(thistuple)
+print(thisList) #--> ['apple', 'banana', 'cherry', 'kiwi', 'orange']
+
+
+"""PYTHON REMOVE LIST ITEMS"""
+
+"""REMOVE SPECIFIED ITEM"""
+# The remove() method removes the specified item.
+# Remove "banana"
+
+thisList = ["apple","banana","cherry"]
+thisList.remove("banana")
+print(thisList) #--> ['apple', 'cherry']
+
+# if there more than item with the specified value, the remove() method removes the first occurrence
+thisList = ['apple','banana','cherry','banana','kiwi']
+thisList.remove("banana")
+print(thisList) #--> ['apple', 'cherry', 'banana', 'kiwi']
+
+"""REMOVE SPECIFIED INDEX"""
+
+# the pop() method removes the specified index.
+thisList=['apple','banana','cherry']
+thisList.pop(1)
+print(thisList) #--> ['apple', 'cherry']
+
+# if you do not specify the index, the pop() method removes the last item.
+theList.pop()
+print(theList) #--> ['apple']
+
+# the del keyword also removes the specified index
+thisList = ['apple','banana','cherry']
+del thisList[0]
+print(thisList) #--> ['banana', 'cherry']
+
+# The del keyword can also delete the lis completely
+thisList = ['apple','banana','cherry']
+del thisList
+#--> if you print(thisList)  --> NameError: name 'thisList' is not defined
+
+"""CLEAR THE LIST"""
+# The clear() method empties the list.
+# the list still remains, but it has no content.
+thisList = ["apple","banana","cherry"]
+thisList.clear()
+print(thisList) #--> []
+
+"""PYTHON LOOP LISTS"""
+
+"""LOOP THROUGH A LIST"""
+# You can loop through the list items by using a for loop.
+# print all items in the list, one by one.
+thisList = ["apple","banana","cherry"]
+for x in thisList:
+    print(x) 
+# apple
+# banana
+# cherry
+
+"""LOOP THROUGH THE INDEX NUMBERS"""
+# you can also loop through the list items by refering to their index number.
+# use the range() and len() functions to create a suitable iterable
+
+thisList = ["apple","banana","cherry"]
+for i in range(len(thisList)):
+    print(thisList[i])
+
+# -> The iterable created in the example above is [0, 1, 2]
+# apple
+# banana
+# cherry
+
+"""USING A WHILE LOOP"""
+# You can loop through the list items by using a while loop
+# Use  the len() function to determine the length of the list, the start at 0 and loop way through the list items by refering to their indexes.
+# Remember to increase the index by  after each iteraction.
+
+#print all items using a while lopp to go through all the index numbers.
+
+thisList = ["apple","banana","cherry"]
+i = 0
+while i < len(thisList):
+    print(thisList[i])
+    i = i + 1
+# apple
+# banana
+# cherry
+
+
+"LOOPING USING LIST COMPREHENSION"
+#  list comprehension offers a shorter syntax for looping through list.
+#  A short hand for loop that will print all items in a list.
+thisList = ["apple","banana","cherry"]
+[print(x) for x in thisList]
+# apple
+# banana
+# cherry
+
+
+
