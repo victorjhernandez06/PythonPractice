@@ -239,5 +239,88 @@ thisList = ["apple","banana","cherry"]
 # banana
 # cherry
 
+"""PYTHON LIST COMPREHENSION"""
+# List comprehension offers a shorter syntax when you want to create a new list based on values of an existing list.
 
+# Example, Based on a list of fruits, you want a new list, containing only the fruits with the letter "a" in the name.
+#  Without list comprehension you have to write a for statement with a conditional test inside.
 
+fruits = ["apple","banana","cherry","kiwi","mango"]
+newList = []
+for x in fruits:
+    if "a" in x:
+        newList.append(x)
+print(newList) #--> ['apple', 'banana', 'mango']
+
+print("---------------")
+fruits = ["apple","banana","cherry","kiwi","mango"]
+newList = []
+for x in fruits:
+    if "e" in x:
+        newList.append(x)
+print(newList)
+
+# with list comprehension you can do all that with only one line of code
+
+fruits = ["apple","banana","cherry","kiwi","mango"]
+newList = [x for x in fruits if "a" in x]
+print(newList)
+
+# The syntax 
+# newList = [expression for item in iterable if condition == True]
+# The return value is a new list, leaving the old unchanged
+
+# Condition
+# the condition is like a filter that only accepts the items that evaluate to True.
+# Only accept items that are not "apple"
+
+newList = [x for x in fruits if x != "apple"]
+
+# The condition if x != "apple" will return True for all elements other than "apple", making the new list contain all fruits except "apple"
+# the condition is optional and can be omitted:
+# With no if statement
+
+newList = [x for x in fruits]
+print(newList) #--> ['apple', 'banana', 'cherry', 'kiwi', 'mango']
+
+"""ITERABLE"""
+# The iterable can be any iterable object, like a list, tuple, set etc.
+# You can use the range() function to create an iterable.
+newList = [x for x in range(10)]
+print(newList) #--> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# accept only numbers lower than 5:
+newList = [x for x in range(10) if x < 5]
+print(newList) #--> [0, 1, 2, 3, 4]
+
+"""EXPRESSION"""
+
+# The expression is the current item in the iteration, but it is also the outcome which you can manipulate before it ends up like a list item in the new list.
+
+# Set the values in the new list to upper case:
+newList = [x.upper() for x in fruits]
+print(newList) #--> ['APPLE', 'BANANA', 'CHERRY', 'KIWI', 'MANGO']
+
+# you can set outcome to whatever you like 
+# Set all values in the new list to "hello"
+newList = ["hello" for x in fruits]
+print(newList) #--> ['hello', 'hello', 'hello', 'hello', 'hello']
+
+# The expression can also contain conditions, not like filter, but as a way to manipulate the outcome
+fruits = ['apple', 'banana', 'cherry', 'kiwi', 'mango']
+newList = [x if x != "banana" else "orange" for x in fruits]
+print(newList) #--> ['apple', 'orange', 'cherry', 'kiwi', 'mango']
+
+# Exercise
+fruits = ["apple", "banana","cherry"]
+newList = [x for x in fruits if x == "banana" ]
+print(newList) #--> ['banana']
+
+"""PYTHON SORT LIST"""
+
+"""Sort list  alphanumerically"""
+# list objects have sort() method that will sort the list alphanumerically ascending, by default
+
+theList = ["orange","mango","kiwi","pineaple","banana"]
+theList.sort()
+print(theList) # -->  ['banana', 'kiwi', 'mango', 'orange', 'pineaple']
