@@ -324,3 +324,35 @@ print(newList) #--> ['banana']
 theList = ["orange","mango","kiwi","pineaple","banana"]
 theList.sort()
 print(theList) # -->  ['banana', 'kiwi', 'mango', 'orange', 'pineaple']
+
+# sort the list numerically
+thisList = [100, 50, 65, 82, 34]
+thisList.sort()
+print(thisList) #--> [34, 50, 65, 82, 100]
+
+
+"""SORT DESCENDING"""
+#sort the list descending
+thisList = ["orange", "mango","kiwi","pineaple", "banana"]
+thisList.sort(reverse=True)
+
+# sort the list descending
+thisList = [100, 50, 60, 82, 23]
+thisList.sort(reverse=True)
+print(thisList)
+
+"""CUSTOMIZE SORT FUNCTION"""
+# You can also customize your own function by using the keyword argument key = function
+# The function will return a number that will be used to sort the list (the lowest number first)
+
+# Example
+# Sort the list based on how close the number is to 50
+def myfunc(n):
+    return abs(n -50)
+
+thisList = [100, 50, 65, 82, 23]
+thisList.sort(key = myfunc)
+print(thisList) #--> [50, 65, 23, 82, 100]
+
+"""CASE INSENSITIVE SORT"""
+# By default the sort() method is case sensitive, resulting in all capital letters
