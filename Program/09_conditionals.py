@@ -9,6 +9,7 @@ if my_conditions == True:
 
 print("la condicion no se ejecuta")
 
+
 # Es la tercera vez que lo hagosource venv/bin/activate
 my_conditions = 5*2*3
 
@@ -18,7 +19,8 @@ elif my_conditions == 10:
     print(f"The value in my conditions is {my_conditions}")
 else:
     print(f"The value in my conditions is {my_conditions}")
-    
+
+
 # Short hand if..else
 a = 2
 b = 330
@@ -92,3 +94,8 @@ if x > y:
     print("Hello")
 else: 
     print("Welcome")
+    
+    
+
+
+
