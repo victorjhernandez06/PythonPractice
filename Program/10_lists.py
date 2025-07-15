@@ -356,3 +356,128 @@ print(thisList) #--> [50, 65, 23, 82, 100]
 
 """CASE INSENSITIVE SORT"""
 # By default the sort() method is case sensitive, resulting in all capital letters
+thisList = ["banana","Orange","Kiwi","cherry"]
+thisList.sort()
+print(thisList) #--> ['Kiwi', 'Orange', 'banana', 'cherry']
+
+# Luckily we can use built-in functions as key functions when sorting a list.
+# So if you want a case-sensitive sort function, use str.lower as a key function.
+
+# Example.
+# Perfom a case-sensitive sort of the list.
+thisList = ["banana","Orange","Kiwi","cherry"]
+print(thisList) # --> ['banana', 'Orange', 'Kiwi', 'cherry']
+
+"""REVERSE ORDER"""
+# What if you want to reverse the order of a list, regardless of the alphabet.
+# The reverse() method reverses the current sorting order of the elements. 
+
+# Reverse the order of the list items.
+thisList = ["banana","Orange","Kiwi","cherry"]
+thisList.reverse()
+print(thisList) #--> ['cherry', 'Kiwi', 'Orange', 'banana']
+
+"""Python - Copy Lists"""
+# You cannot copy a list simply by tiping list1 = list2, because list2, will only be a reference to list1, and changees made in list1 automatically also be made in list2
+
+"""Use the copy() method"""
+# You can use the build-in List Method copy() to copy a list.
+
+thisList = ["Object1","Object2","Object3"]
+myList = thisList.copy()
+print(myList) # --> ['Object1', 'Object2', 'Object3']
+
+"""Use the list() Method"""
+# Another way to make a copy is to use the built-in method list().
+
+thisList = ["Object1","Object2","Object3"]
+myList = list(thisList)
+print(myList) #--> ['Object1', 'Object2', 'Object3']
+
+"""Use the slice operator"""
+# You ca also make a copy of a list by using the : (slice) operator.
+thisList = ["Object1","Object2","Object3"]
+myList = thisList[:]
+print(thisList) #--> ['Object1', 'Object2', 'Object3']
+
+"""Pyhton two List"""
+# There are several ways to join, or concatenate two or more list in Python.
+# One of the easiest ways by using the + operator.
+
+list1 = ["a","b","c"]
+list2 = [19,32,21]
+
+list3 = list1 + list2
+print(list3) # --> ['a', 'b', 'c', 19, 32, 21]
+list3 = [str(x) for x in list3]
+print(list3, "--")
+
+string = [x for x in list3 if isinstance(x, str)]
+numbers = [x for x in list3 if isinstance(x, int)]
+
+string.sort()
+numbers.sort()
+
+list3_sorted = string + numbers
+print(list3_sorted)
+
+list1.sort() #Ordeno la lista1
+list2.sort() # Ordeno la lista2
+list3 = list2 + list1 #luego puedo unir las listas, de la manera que vea conveniente.
+print(list3)
+list3 = list1 + list2 #Aqui hay otra manera de ordenar las listas.
+print(list3)
+
+# Ordenando las listas a un solo tipo de dato
+list3 = [str(x) for x in list3]
+list3.sort()
+
+print(list3) #--> ['19', '21', '32', 'a', 'b', 'c']
+
+# Podemos convertir todo a int (Solo si es posible)
+list1 = ["1","5","3"]
+list2 = [18, 7, 32]
+
+list3 = list1 + list2
+# convertimos todos a int
+list3 = [int(x) for x in list3]
+list3.sort()
+
+print(list3) #--> [1, 3, 5, 7, 18, 32]
+
+list1 = ["a", "b", "c"]
+list2 = [1, 2, 3]
+
+list3 =list1 + list2
+print(list3) 
+
+# Or you can use the extend() method, where the purpose is ti add elements from one list to another list.
+list1 = ['a','b','c']
+list2 = [1, 2, 3]
+list1.extend(list2)
+print(list1)
+
+"""PYTHON JOIN LISTS"""
+# Join two lists
+# there are several ways to join, or concatenate, two or more lists in python.
+#  One of the easiest ways are by using the + operator.
+
+list1 = ['a','b','c']
+list2 = [1, 2, 3]
+list3 = list2 + list1
+print(list3) #--> [1, 2, 3, 'a', 'b', 'c']
+
+# Another way to join two lists is by appening all the items from list2 into list 1, one by one
+
+list1 =["medicina1","medidicina2","medicina3"]
+list2 = [1, 2, 3]
+for x in list2:
+    list1.append(x)
+print(list1) # --> ['medicina1', 'medidicina2', 'medicina3', 1, 2, 3]
+
+# You can use the extend() method, where the purpose is to add elements from one list to another list.
+
+list1 = ['step1','step2','step3']
+list2 = [1, 2, 3]
+list1.extend(list2)
+print(list1)#--> ['step1', 'step2', 'step3', 1, 2, 3]
