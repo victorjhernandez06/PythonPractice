@@ -267,3 +267,7 @@ else:
 
 for x in [0,1,2]:
     pass #aqui no pasa nada, el bucle solo queda en el aire, esperando a que algun dia le des utilidad, como esta vacio, para no generar error le colocas la palabra reservada pass.
+
+
+
+

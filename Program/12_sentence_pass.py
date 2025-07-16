@@ -3,6 +3,7 @@ from math import factorial
 
 # Definicion de funciones:
 def factorial(num):
+    pass #--> cuando la funcion queda pendiente
     #pendiente
 
 # Script para encontrar el factorial
