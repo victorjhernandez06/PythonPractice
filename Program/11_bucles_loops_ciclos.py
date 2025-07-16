@@ -150,3 +150,38 @@ for x in objects:
 # Example: usign the range() function:
 for x in range(6):
     print(x)
+# 0
+# 1
+# 2
+# 3
+# 4
+# 5
+
+# The range() function defaults to 0 as a starting value, however it is possible to specify the starting value adding a parameter: range(2,6), which means values from 2 to 6 (but no including 6)
+for x in range(2, 30, 5):
+    print(x)
+# 2
+# 7
+# 12
+# 17
+# 22
+# 27
+
+"""Else in For Loop"""
+# the else keywords in a for loop specifies a block of code to be executed when the loop finished.
+
+# example: print all numbers from 0 to 5, and print a message when the loop has ended.
+
+for x in range(6):
+    print(x)
+else:
+    print('finally finished')
+
+# 0
+# 1
+# 2
+# 3
+# 4
+# 5
+# finally finished
+
