@@ -79,3 +79,74 @@ else:
 # 5
 # i is no longer less than 6
 print('continue with more exercise from while loops...')
+
+"""Python for loops"""
+# A for loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set or a string)
+# this is less like for keyword in other programming languages, and works more like an iterator method as found in other object-orientated programming languages.
+# With he for loop we can execute a set statements, once for each item in a list, tuple, set, etc. 
+
+# Example
+# print each fruit in a fruit list
+objects = ['set_1','set_2','set_3']
+for x in objects:
+    print(x)
+# set_1
+# set_2
+# set_3
+
+"""Looping through a string"""
+# Even string are iterable objects, they contain a sequence of characters.
+for x in "computer":
+    print(x)
+# c
+# o
+# m
+# p
+# u
+# t
+# e
+# r
+
+"""The break statement"""
+# with the break statement we can stop the loop before it has looped through all the items
+# Example: Exit the loop when x is: step2
+
+objects = ['step_1','step_2','Step3']
+for x in objects:
+    print (x)
+    if x == 'step_2':
+        break
+# step_1
+# step_2
+
+# Example: Exit the loop when x is "step_x", but this time the break comes before the print
+objects = ['step_1','step_2', 'step_3','step_x','step_4', 'step_5']
+for x in objects:
+    if x == 'step_x':
+        break
+    print(x)
+# step_1
+# step_2
+# step_3  
+
+
+"""The continue statement"""
+# with the continue statement we can stop the current iteration of the loop, and continue with the next.
+# Example: Do not print 'set_x'.
+objects = ['step_1','step_2', 'step_3','step_x','step_4', 'step_5']
+for x in objects:
+    if x == 'step_x':
+        continue
+    print(x)
+# step_1
+# step_2
+# step_3
+# step_4
+# step_5
+
+"""The range() function"""
+# To loop through a set a code a specified number of times, we can use the range() function
+# The range() function returns a sequence of numbers, starting from 0, by default, and increments by  (by defaults), and ends at a specified number.
+# Example: usign the range() function:
+for x in range(6):
+    print(x)
