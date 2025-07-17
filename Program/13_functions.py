@@ -57,7 +57,7 @@ def print_name_with_default(name,surname, alias = 'Sin Alias'):
 print_name_with_default('Victor','Hernandez','Victordev06') #--> Victor Hernandez Victordev06
 print_name_with_default('Victor','Hernandez') #--> Victor Hernandez Sin Alias
 
-###
+### el asterico indica que puedo incluir muchos parametros del mismo tipo
 def print_texts(*text):
     print(text)
     
