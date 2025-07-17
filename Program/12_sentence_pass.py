@@ -3,8 +3,12 @@ from math import factorial
 
 # Definicion de funciones:
 def factorial(num):
-    pass #--> cuando la funcion queda pendiente
-    #pendiente
+    # pass #--> cuando la funcion queda pendiente
+    # #pendiente
+    fact = 1
+    for i in range(num):
+        pass # Pendiente falta algo aqui.    
+    return fact
 
 # Script para encontrar el factorial
 # Programa Principal.

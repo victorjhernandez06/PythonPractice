@@ -87,9 +87,7 @@ print('continue with more exercise from while loops...')
 # this is less like for keyword in other programming languages, and works more like an iterator method as found in other object-orientated programming languages.
 # With he for loop we can execute a set statements, once for each item in a list, tuple, set, etc. 
 
-# Exercise Brais.
-print('////---////')
-
+# Exercises
 my_list = [35, 24, 62, 52, 30, 30, 17]
 for element in my_list:
     print(element)
