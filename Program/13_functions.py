@@ -31,6 +31,7 @@ my_function('Adrian') #--> Adrian Hernandez
 my_function('Mathias') #--> Mathias Hernandez
 my_function('Sofia') #--> Sofia Hernandez  
 
+# Arguments are often shortened to args in Python documentations.
 
 """ Parameters or Arguments """
 
@@ -63,115 +64,123 @@ def my_function(*kids):
 
 my_function('Adrian', 'Mathias','Sofia')
 
+# Arbitrary Arguments are often shortened to *args in Python documentations.
 
-##microsoft
-#print the current time
+"""Keywords Arguments"""
+# You can also send arguments with the key = value syntax.
+# This way the order of the arguments does not matter
 
-def print_time():
-    print('Task completed')
-    print(datetime.now())
-    print()
+def my_function(child2, child3, child1):
+    print(f'The youngest child is {child3}')
 
-firs_name = 'Sofia'
-print_time() 
+my_function(child2 = 'Mathias', child3 = 'Sofia', child1 = 'Adrian' )
+# --> The youngest child is Sofia
+# the phrase Keyword Arguments are often shortened to kwagars in Python documentations.
 
-for x in range(0,10):
+"""Arbitrary Keyword Arguments, **Kwargs"""
+# If you do not know how many keywords arguments that will be passed into your function, add two asterisk ** before the parameter name in the function definition.
+
+# This way the function will receive a dictionary of arguments, and can access the items according.
+
+#Example
+# if the number of keywords arguments is unknown, add a double ** before the parameter name:
+def my_function(**kid):
+    print("His last name is " + kid["fname"])
+my_function(fname="mathias", lname = "sofia")
+
+# Arbitrary Kword Arguments are often shortened to **kwargs in Python documentations.
+
+"""Default Parameter Valuey"""
+# The followinfg example shows how to use a default parameter value.
+# If we call the function without argument, it uses the default value:
+
+def my_function(country = 'Cojedes'):
+    print('I am from '+ country)
+
+my_function('las Vegas') # -->I am from las Vegas
+my_function('San Carlos') # --> I am from San Carlos
+my_function() # --> I am from Cojedes
+my_function('San Miguel I') #--> I am from San Miguel I
+
+"""Passing a List as an Argument"""
+# You can send any data types of arguments to a function (string, number, booleans, list, dict, sets, tuples), and it will treated as the same data type inside the function.
+
+# E.g if you send a List a argument, it will still be a list when it reaches the function.
+
+#Example
+def my_function(food):
+    for x in food:
+        print(x)
+fruits = ['apple','banana','cherry']
+
+my_function(fruits)
+# apple
+# banana
+# cherry
+
+"""Return Values"""
+def my_function(x):
+    return 5 * x
+print(my_function(3)) #--> 15
+print(my_function(5)) #--> 25
+print(my_function(9)) #--> 45
+
+"""The pass statements"""
+# function definitions cannot be empty, but if you for some reason have a function definition with no content, put in the pass statement to avoid getting an error.
+def my_function():
+    pass
+
+"""Positional-Only Arguments"""
+# You can specify that a function can have ONLY positiional arguments, or ONLY keyword arguments.
+# To specify that a function can have only positional arguments, add , / after the arguments.
+def my_function(x,/):
     print(x)
-print_time()
+my_function(3)
+# Without the ,/ you are actually allowed to use keyword arguments even if the function expects positional arguments.
 
-    
-"""Pass the task name as a parameter"""
-#print the current time and task name
-def print_time(task_name):
-    print(task_name)
-    print(datetime.now())
-    print()
-first_name = 'Sofia'
-print_time('first name assigned')
-
-for x in range (0,10):
+#Example
+def my_function(x):
     print(x)
-print_time('Loop Completed')
-    
+my_function(x = 3) #--> 3
 
-## Fix the next code.
-first_name = input('Enter your first name: ')
-first_name_initial = first_name[0:1]
+"""Key-Only Arguments"""
+# To specify that a function can have only keyword arguments, add *, before the argument:
+#example
+def my_function(*, x):
+    print(x)
+my_function(x = 3) #--> 3
 
-last_name  = input('Enter your last name: ')
-last_name_initial =  last_name[0:1]
+# Without the *. you are allowed to use positional arguments even if the function expects keyword arguments
+def my_function(x):
+    print(x)
+my_function(3)
 
-print('Your initials are: ' + first_name_initial + last_name_initial)
-#imprime las iniciales de los nombres tipeados.
+"""Combine Positional-Only and keyword-Only"""
+# You can combine the two argument types in the same function.
+# Any argument before the / , are positional-only, and any argument after the *,, are keyword-only.
 
-## Functions that return values allow clever code, but you migth trade readability for less code.
-
-def get_initial(name):
-    initial = name[0:1].upper()
-    return initial
-
-first_name = input('Enter your first name: ')
-last_name = input('Enter your last name: ')
-print('Your initial are: '+ get_initial(first_name) + get_initial(last_name))
+def my_function(a, b, /, *, c, d):
+    print(a+b+c+d)
+my_function(5, 6, c = 7, d = 8)
 
 
-##Functions With parameters
+"""Recursion"""
+# Python also acepts function recursion, which means a defined function can call itself.
+# Recursion iss a common mathematical and programming concept. It means that a function call itself. This has the benefit of meaning that you can loop through data to reach a result.
+# The developer should be very careful with recursion as it can be quite easy to slip into writing a function which never terminates, or one that uses excess amounts of memory or processor power. However, when written correctly recursion can be a very efficient and mathematically-elegant approach to programming.
+# In this example, tri_recursion() is a function that have defined to call itself("recurse"). We use the k variable as the data, which decrements(-1) every time we recurse. The recursion ends whens the condition is no greater tha 0(i.e when it is 0).
 
-def get_initial(name, force_uppercase=True):
-    if force_uppercase:
-        initial = name[0:1].upper()
+#Example
+def tri_recursion(k):
+    if(k>0):
+        result = k + tri_recursion(k -1)
+        print(result)
     else:
-        initial = name[0:1]
-    return initial
+        result=0
+    return result
 
-first_name = input('Enter your name: ')
-first_name_initial =  get_initial(first_name)
-
-print(f'Your initial name is: {first_name_initial}')
-
-#You can also assign the values to  parameters by name whe you call the function
-
-def get_initial(name, force_uppercase):
-    if force_uppercase:
-        initial = name[0:1].upper()
-    else:
-        initial = name[0:1]
-    return initial
-first_name =  input('enter your first name: ')
-first_name_initial = get_initial(force_uppercase=True, name=first_name)
-print(f'Your initial is: {first_name_initial}')
-
-#Using the named notation when calling functions makes your code more readable
-# def error_logger(error_code, error_severity, log_to_db, error_message, source_module):
-#     print(f'oh no error {error_message}')
-#     #imagine code here that logs our error to database a file.
-    
-# first_number = 10
-# second_number = 5
-# if first_number > second_number:
-#     error_logger(45, 1, True, 'second number than first','may_math_method')
-
-
-def error_logger(error_code, error_severity, log_to_db, error_message, source_module):
-    print('oh no error:' + error_message)
-    #imagine code here that logs our error to database or file
-    
-first_number = 10
-second_number = 5
-if first_number > second_number:
-    error_logger(error_code = 45, error_severity=1, log_to_db = True, error_message= 'second number greater than first', source_module='May math method')
-
-
-
-
-
-
-
-
-
-
-
-
+print("Recursion example results:")
+tri_recursion(7)
 
 
 
