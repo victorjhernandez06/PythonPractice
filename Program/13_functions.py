@@ -181,7 +181,13 @@ def tri_recursion(k):
 
 print("Recursion example results:")
 tri_recursion(7)
-
+# 1
+# 3
+# 6
+# 10
+# 15
+# 21
+# 28
 
 
 
