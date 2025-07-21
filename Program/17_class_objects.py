@@ -119,3 +119,6 @@ del p1.age
 # You can delete objects by using the del keyword
 #Example: delete the p1 object
 del p1
+
+"""the pass statement"""
+# Class definitions cannot be empty, but if you some reason have a class definition with no content, put in the pass statement to avoid geting an error.
