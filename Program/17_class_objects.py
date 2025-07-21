@@ -35,6 +35,87 @@ p1 = Person('Victor', 42)
 print(p1.name) #--> Victor
 print(p1.age) #--> 42
 
-# Note: the __init__() function is called automatically every time the class is being used to create a new object
+# Note: the __init__() function is called automatically every time th ne class is being used to create a new object
 
-"""T"""
+"""The __str__() Fucntion"""
+# the __str__() function contros what shoud be returned when the class object is represented as a string.
+# Is the __str__() function is not set, the string representation of the obect is returned.
+
+# Example
+# The string representation og an object WITHOUT the __str__() function:
+
+class People:
+    def __init__(self, name, age):
+        self.name =  name
+        self.age = age
+p1 = People('Sofia', 9)
+print(p1) # --> <__main__.People object at 0x7f3fd3912950>
+
+# the string representation of an object WITH the __str__() function.
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def __str__(self):
+        return f"{self.name}({self.age})"
+p1=Person('Karina', 41)
+print(p1) #--> Karina (41)
+
+"""Objects Methods"""
+#The objects Methods can also contain methods, Methods in objects are functions thatbelong to teh object.
+# Let us reate a method the Person class
+
+# Example: Insert a function that prins a greeting, and execute it in the p1 object. 
+
+class Person: 
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+    def myfunc(self):
+        print (f"Hello, my name is: {self.name} and I am {self.age} years old.")
+        print("Hello, my name is: " + self.name + " and i am " + str(self.age) + " years old.")
+        
+p1 = Person('Adrian', 16)
+p1.myfunc() # --> Hello, my name is: Adrian and I am 16 years old.
+
+#note: The self parameter, is a reference tto the current instance of the class, and is used to access variables that belong to the class.
+
+""" The self parameter"""
+
+#the Self parameter is a reference of the curren instance of the class, and is used to access variable that belong in the class.
+
+#It does not have to be named self, can you call it whatever you like, but it has to be the first parameter of any funtion in the class.
+
+#Example
+#use the words mysillyobject and abc instead of self.
+
+class Person:
+    def __init__(mysillyobject, name, age):
+        mysillyobject.name = name
+        mysillyobject.age = age
+        
+    def myfunc(abc):
+        print("Hello my name is: " + abc.name)
+        
+p1 = Person('Victor', 43)
+p1.myfunc() 
+
+"""Modify Object Properties"""
+
+#You can modify properties on aobjects like this:
+p1.age = 40
+print(p1.age)
+
+"""Delete Object Properties"""
+#you can delete properties on objects by using the del keyword
+#example: Delete the age property from the p1 object:
+
+del p1.age
+
+"""Delete Objects"""
+# You can delete objects by using the del keyword
+#Example: delete the p1 object
+del p1
